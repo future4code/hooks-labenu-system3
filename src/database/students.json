@@ -1,0 +1,25 @@
+[
+    {
+        "id" : "633cb2ee80851",
+        "name" : "Adriane",
+        "email" : "adriane@hotmail.com",
+        "data_nasc" : "2000/12/03",
+        "class_id" : "633caf7fc29e6"
+    },
+
+    {
+        "id" : "633cb2f9e5025",
+        "name" : "Max",
+        "email" : "max@yahoo.com",
+        "data_nasc" : "1720/06/12",
+        "class_id" : "633cb16e0a225"
+    },
+
+    {
+        "id" : "633cb305a551c",
+        "name" : "Diogo",
+        "email" : "diogo@gmail.com",
+        "data_nasc" : "2000/12/10",
+        "class_id" : "633cb1781865e"
+    }
+]

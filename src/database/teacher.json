@@ -1,0 +1,25 @@
+[
+    {
+        "id" : "633caf58bbed7",
+        "name" : "Sofia",
+        "email" : "sofia@gmail.com",
+        "data_nasc" : "1990/12/15",
+        "class_id" : "633caf7fc29e6"    
+    },
+
+    {
+        "id" : "633caf6bdd034",
+        "name" : "Morgana",
+        "email" : "morgana.gmail.com",
+        "data_nasc" : "2020/12/17",
+        "class_id" : "633cb16e0a225"    
+    },
+
+    {
+        "id" : "633caf762eb01",
+        "name" : "Bento",
+        "email" : "bento@gmail.com",
+        "data_nasc" : "2010/12/13",
+        "class_id" : "633cb16e0a225"    
+    }
+]
