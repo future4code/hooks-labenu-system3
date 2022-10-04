@@ -1,0 +1,19 @@
+[
+    {
+        "id" : "633caf7fc29e6",
+        "name" : "Frodo",
+        "module" : "1"
+    },
+
+    {
+        "id" : "633cb16e0a225",
+        "name" : "Gandalf",
+        "module" : "5"     
+    },
+
+    {
+        "id" : "633cb1781865e",
+        "name" : "Galadriel",
+        "module" : "7"    
+    }
+]
