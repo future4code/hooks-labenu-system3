@@ -3,6 +3,11 @@ import { StudentDatabase } from "../../database/StudentDatabase";
 import { Student } from "../../models/Student";
 import { v4 as uuidv4 } from "uuid";
 
+const EhUmEmailValido = (email: string): boolean => {
+  const regExEmail = /\S+@\S+\.\S+/;
+  return regExEmail.test(email);
+};
+
 export const createNewStudent = async (req: Request, res: Response) => {
   let errorCode = 400;
   try {
@@ -13,6 +18,10 @@ export const createNewStudent = async (req: Request, res: Response) => {
 
     if (!name || !email || !dataNasc || !classId) {
       throw new Error("Body inválido.");
+    }
+    
+    if (!EhUmEmailValido(email)) {
+      throw new Error("Você deve passar um email valido");
     }
 
     const student = new Student(uuidv4(), name, email, dataNasc, classId);
