@@ -1,8 +1,8 @@
-import group from "./group.json"
-import students from "./students.json"
-import specialty from "./specialty.json"
-import teacher from "./teacher.json"
-import hobby from "./hobby.json"	
+import group from "./json/group.json"
+import students from "./json/students.json"
+import specialty from "./json/specialty.json"
+import teacher from "./json/teacher.json"
+import hobby from "./json/hobby.json"	
 import BaseDatabase from "./BaseDatabase";
 import { TABLE_STUDENTS, TABLE_STUDENT_HOBBY, TABLE_HOBBY, TABLE_CLASS, 
     TABLE_TEACHER, TABLE_TEACHER_SPECIALTY, TABLE_SPECIALTY } from "./tableNames";
