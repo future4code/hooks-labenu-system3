@@ -10,3 +10,4 @@ app.get("/teste", async (req, res) => {
 app.get("/classes", getClasses)
 
 app.post("/classes", createClasses)
+
