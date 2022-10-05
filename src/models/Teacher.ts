@@ -6,15 +6,8 @@ export class Teacher extends Person {
     name: string,
     email: string,
     dataNasc: string,
-    classId: string,
-    private specialty: string
+    classId: string
   ) {
     super(id, name, email, dataNasc, classId);
-
-    this.specialty = specialty;
-  }
-
-  public getSpecialty() {
-    return this.specialty;
   }
 }
