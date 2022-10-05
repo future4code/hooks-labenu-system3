@@ -1,19 +1,19 @@
-import express from "express"
-import cors from "cors"
-import { AddressInfo } from "net"
+import express from "express";
+import cors from "cors";
+import { AddressInfo } from "net";
 
 // Configuração do Express
-export const app = express()
+export const app = express();
 
-app.use(express.json())
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 
 // Função que faz o servidor escutar as requisições vindas da porta definida.
 const server = app.listen(process.env.PORT || 3003, () => {
-    if (server) {
-       const address = server.address() as AddressInfo;
-       console.log(`Server tá on em http://localhost:${address.port}`);
-    } else {
-       console.error("O server tá off.");
-    }
- })
+  if (server) {
+    const address = server.address() as AddressInfo;
+    console.log(`Server tá on em http://localhost:${address.port}`);
+  } else {
+    console.error("O server tá off.");
+  }
+});
