@@ -3,11 +3,11 @@ import { ClassDatabase } from "../../database/ClassDatabase";
 import { v4 as uuidv4 } from "uuid";
 import { Class } from "../../models/Class";
 
-export const createClasses = async (req: Request, res: Response) => {
+export const createClasses = async (request: Request, response: Response) => {
   let errorCode = 400;
   try {
-    const name = req.body.name;
-    const module = req.body.module;
+    const name = request.body.name;
+    const module = request.body.module;
 
     if (!name) {
       throw new Error("Por favor, informe o nome.");
@@ -18,8 +18,8 @@ export const createClasses = async (req: Request, res: Response) => {
     const classDatabase = new ClassDatabase();
 
     classDatabase.createClass(group);
-    res.status(200).send({ message: `Turma ${name} criada com sucesso.` });
+    response.status(200).send({ message: `Turma ${name} criada com sucesso.` });
   } catch (error: any) {
-    res.status(errorCode).send({ message: error.messagge });
+    response.status(errorCode).send({ message: error.messagge });
   }
 };
