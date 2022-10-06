@@ -18,7 +18,9 @@ export const createClasses = async (request: Request, response: Response) => {
     const classDatabase = new ClassDatabase();
 
     classDatabase.createClass(group);
-    response.status(200).send({ message: `Turma ${name} criada com sucesso.` });
+    response
+      .status(200)
+      .send({ message: `Turma ${name} criada com sucesso 😀 !!` });
   } catch (error: any) {
     response.status(errorCode).send({ message: error.messagge });
   }

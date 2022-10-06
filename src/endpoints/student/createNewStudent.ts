@@ -16,6 +16,8 @@ export const createNewStudent = async (request: Request, response: Response) => 
     const dataNasc = request.body.dataNasc;
     const classId = request.body.classId;
 
+    const vefDate = `${dataNasc.slice(6)}/${dataNasc.slice(3,5)}/${dataNasc.slice(0,2)}`
+
     if (!name || !email || !dataNasc || !classId) {
       throw new Error("Body inválido.");
     }
@@ -24,12 +26,12 @@ export const createNewStudent = async (request: Request, response: Response) => 
       throw new Error("Você deve passar um email valido");
     }
 
-    const student = new Student(uuidv4(), name, email, dataNasc, classId);
+    const student = new Student(uuidv4(), name, email, vefDate, classId);
 
     const studentDatabase = new StudentDatabase();
     studentDatabase.createStudent(student);
 
-    response.status(200).send({ message: "Estudante criado!" });
+    response.status(200).send({ message: `Estudante ${name} criado com sucesso 😀 !!` });
   } catch (error: any) {
     response.status(errorCode).send({ message: error.message });
   }
