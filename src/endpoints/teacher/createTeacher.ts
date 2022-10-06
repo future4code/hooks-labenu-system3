@@ -16,6 +16,8 @@ export const createTeacher = async (request: Request, response: Response) => {
     const dataNasc = request.body.dataNasc;
     const classId = request.body.classId;
 
+    const vefDate = `${dataNasc.slice(6)}/${dataNasc.slice(3,5)}/${dataNasc.slice(0,2)}`
+
     if (!name || !email || !dataNasc || !classId) {
       throw new Error("Body inválido.");
     }
@@ -24,7 +26,7 @@ export const createTeacher = async (request: Request, response: Response) => {
       throw new Error("Você deve passar um email valido");
     }
 
-    const teacher = new Teacher(uuidv4(), name, email, dataNasc, classId);
+    const teacher = new Teacher(uuidv4(), name, email, vefDate, classId);
 
     const teacherDatabase = new TeacherDatabase();
     teacherDatabase.createTeacher(teacher);
