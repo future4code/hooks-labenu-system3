@@ -4,7 +4,7 @@ import { Class } from "./../models/Class"
 
 export class ClassDatabase extends BaseDatabase {
     public async getAllClasses() {
-        const result = await BaseDatabase.connection(TABLE_CLASS).select()      
+        const result = await BaseDatabase.connection(TABLE_CLASS).select().whereNot('module', '0')
         return result
     }
 
@@ -14,6 +14,13 @@ export class ClassDatabase extends BaseDatabase {
             name: group.getName(),
             module: group.getModule()
         })
+    }
+    public async changeModules(module: string, id: string) {
+        await BaseDatabase.connection.raw(`
+            UPDATE ${TABLE_CLASS} 
+            SET module = "${module}" 
+            WHERE id = "${id}"
+        `);
     }
 
 }
