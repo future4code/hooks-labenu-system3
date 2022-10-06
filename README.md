@@ -9,13 +9,13 @@
 
 
 <h2>Tecnologias</h2>
-<ul>
-<p><a href="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"></a></P>
+
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"/>
 <p><a></a></P>
 <p><a></a></P>
 <p><a></a></P>
 <p><a></a></P>
-</ul>
+
 
 
 <h2>👨‍💻 Integrantes</h2>
