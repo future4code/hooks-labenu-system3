@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import { StudentDatabase } from "../../database/StudentDatabase";
 
-export const getStudentByName = async (req: Request, res: Response) => {
+export const getStudentByName = async (request: Request, response: Response) => {
   let errorCode = 400;
   try {
-    const name = req.params.name;
+    const name = request.params.name;
 
     if (name === ":name") {
       throw new Error("Insira o nome do estudante!");
@@ -13,8 +13,8 @@ export const getStudentByName = async (req: Request, res: Response) => {
     const studentDatabase = new StudentDatabase();
     const result = await studentDatabase.getStudentByName(name);
 
-    res.status(200).send({ message: result });
+    response.status(200).send({ message: result });
   } catch (error: any) {
-    res.status(errorCode).send({ message: error.message });
+    response.status(errorCode).send({ message: error.message });
   }
 };

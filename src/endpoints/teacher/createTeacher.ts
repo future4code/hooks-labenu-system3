@@ -3,12 +3,11 @@ import { Teacher } from "../../models/Teacher";
 import { v4 as uuidv4 } from "uuid";
 import { TeacherDatabase } from "../../database/TeacherDatabase";
 
-
 const EhUmEmailValido = (email: string): boolean => {
-    const regExEmail = /\S+@\S+\.\S+/;
-    return regExEmail.test(email);
-  };
-  
+  const regExEmail = /\S+@\S+\.\S+/;
+  return regExEmail.test(email);
+};
+
 export const createTeacher = async (request: Request, response: Response) => {
   let errorCode = 400;
   try {
@@ -18,19 +17,21 @@ export const createTeacher = async (request: Request, response: Response) => {
     const classId = request.body.classId;
 
     if (!name || !email || !dataNasc || !classId) {
-        throw new Error("Body inválido.");
-      }
+      throw new Error("Body inválido.");
+    }
 
     if (!EhUmEmailValido(email)) {
-        throw new Error("Você deve passar um email valido");
-      }
+      throw new Error("Você deve passar um email valido");
+    }
 
     const teacher = new Teacher(uuidv4(), name, email, dataNasc, classId);
 
     const teacherDatabase = new TeacherDatabase();
     teacherDatabase.createTeacher(teacher);
 
-    response.status(200).send({ message: `Professor ${name} criado com sucesso 😀 !!` });
+    response
+      .status(200)
+      .send({ message: `Professor ${name} criado com sucesso 😀 !!` });
   } catch (error: any) {
     response.status(errorCode).send({
       message: error.message,

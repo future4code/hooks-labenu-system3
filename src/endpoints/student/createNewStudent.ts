@@ -8,13 +8,13 @@ const EhUmEmailValido = (email: string): boolean => {
   return regExEmail.test(email);
 };
 
-export const createNewStudent = async (req: Request, res: Response) => {
+export const createNewStudent = async (request: Request, response: Response) => {
   let errorCode = 400;
   try {
-    const name = req.body.name;
-    const email = req.body.email;
-    const dataNasc = req.body.dataNasc;
-    const classId = req.body.classId;
+    const name = request.body.name;
+    const email = request.body.email;
+    const dataNasc = request.body.dataNasc;
+    const classId = request.body.classId;
 
     if (!name || !email || !dataNasc || !classId) {
       throw new Error("Body inválido.");
@@ -29,8 +29,8 @@ export const createNewStudent = async (req: Request, res: Response) => {
     const studentDatabase = new StudentDatabase();
     studentDatabase.createStudent(student);
 
-    res.status(200).send({ message: "Estudante criado!" });
+    response.status(200).send({ message: "Estudante criado!" });
   } catch (error: any) {
-    res.status(errorCode).send({ message: error.message });
+    response.status(errorCode).send({ message: error.message });
   }
 };

@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { StudentDatabase } from "../../database/StudentDatabase";
 
-export const updateStudentClass = async (req: Request, res: Response) => {
+export const updateStudentClass = async (request: Request, response: Response) => {
   let errorCode = 400;
   try {
-    const classId = req.body.classId;
-    const id = req.body.id;
+    const classId = request.body.classId;
+    const id = request.body.id;
 
     if (!classId || !id) {
       throw new Error("Preencha os campos!");
@@ -14,8 +14,8 @@ export const updateStudentClass = async (req: Request, res: Response) => {
     const studentDatabase = new StudentDatabase();
     await studentDatabase.changeStudentClass(classId, id);
 
-    res.status(200).send({ message: "O usuário trocou de turma com sucesso 😀!" });
+    response.status(200).send({ message: "O usuário trocou de turma com sucesso 😀!" });
   } catch (error: any) {
-    res.status(errorCode).send({ message: error.message });
+    response.status(errorCode).send({ message: error.message });
   }
 };
