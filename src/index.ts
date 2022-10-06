@@ -7,12 +7,16 @@ import { updateStudentClass } from "./endpoints/student/updateStudentClass";
 import { createTeacher } from "./endpoints/teacher/createTeacher";
 import { getAllTeacher } from "./endpoints/teacher/getAllTeacher";
 import { updateTeacherClass } from "./endpoints/teacher/updateTeacherClass";
+import {changeModule} from "./endpoints/class/changeModule"
 
 // Pegar Turmas
 app.get("/classes", getClasses);
 
 // Criar  Turma
 app.post("/classes", createClasses);
+
+// Mudar Módulo
+app.put("/classes", changeModule)
 
 // Pegar estudante pelo nome
 app.get("/student/:name", getStudentByName);
