@@ -4,6 +4,9 @@ import { createClasses } from "./endpoints/class/createClass";
 import { createNewStudent } from "./endpoints/student/createNewStudent";
 import { getStudentByName } from "./endpoints/student/getStudentByName";
 import { updateStudentClass } from "./endpoints/student/updateStudentClass";
+import { createTeacher } from "./endpoints/teacher/createTeacher";
+import { getAllTeacher } from "./endpoints/teacher/getAllTeacher";
+import { updateTeacherClass } from "./endpoints/teacher/updateTeacherClass";
 
 // Pegar Turmas
 app.get("/classes", getClasses);
@@ -19,3 +22,12 @@ app.post("/create-user", createNewStudent);
 
 // Trocar estudante de turma
 app.put("/student/change-class", updateStudentClass);
+
+// Criar docente
+app.post ("/create-teacher", createTeacher);
+
+// Pegar todos os docentes
+app.get("/teacher",getAllTeacher )
+
+// Docente troca de turma
+app.put("/teacher/change-class", updateTeacherClass)

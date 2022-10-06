@@ -14,7 +14,7 @@ export const updateStudentClass = async (req: Request, res: Response) => {
     const studentDatabase = new StudentDatabase();
     await studentDatabase.changeStudentClass(classId, id);
 
-    res.status(200).send({ message: "O usuário trocou de turma com sucesso!" });
+    res.status(200).send({ message: "O usuário trocou de turma com sucesso 😀!" });
   } catch (error: any) {
     res.status(errorCode).send({ message: error.message });
   }
