@@ -1,0 +1,66 @@
+// GET
+// Pega estudante por nome
+### 
+GET http://localhost:3003/student/:nome
+
+// Pega todas as classes
+### 
+GET http://localhost:3003/classes
+
+// Pega todos os docentes
+### 
+GET http://localhost:3003/teacher
+
+// PUT
+
+// Troca estudante de turma
+###
+PUT http://localhost:3003/student/change-class
+Content-Type: application/json
+
+{
+    "classId" : "b67bf423-a8b3-4df3-8a6c-ab15e6d5a0b5",
+    "id" : "633cb2f9e5025"
+}
+
+// Troca docente de turma
+###
+PUT http://localhost:3003/teacher/change-class
+Content-Type: application/json
+
+{
+    "classId" : "554bd669-7081-4242-970f-24edead95166",
+    "id" : "5a938507-2cc9-47e4-a187-45502871e87c"
+}
+
+// POST 
+// Cria estudante 
+###
+POST http://localhost:3003/create-user
+Content-Type: application/json
+
+{
+    "name" : "Akira",
+    "email" : "akira@gmail.com",
+    "dataNasc" : "2010/05/09",
+    "classId" : "633cb16e0a225"
+}
+
+//Cria classe 
+###
+POST 
+Content-Type: application/json
+
+
+// Cria docente
+###
+POST http://localhost:3003/create-teacher
+Content-Type: application/json
+
+
+{
+    "name" : "Rubeus Hagrid",
+    "email" : "hagrid@gmail.com",
+    "dataNasc" : "1808/08/08",
+    "classId" : "633cb16e0a225"
+} 
