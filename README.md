@@ -14,11 +14,12 @@ e ser capaz de aplicá-la ao projeto de maneira que cumprisse com todas as expec
 
 
 <h2> ⚙ Tecnologias</h2>
-
+<ul>
 <h5>DotEnv</h5>
 <h5>Express.JS</h5>
 <h5>Mongoose</h5>
 <h5>Nodemon</h5>
+ </ul>
 
 
 
