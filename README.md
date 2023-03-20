@@ -1,5 +1,5 @@
 <div align="center">
-  <h1> 🚀 CRUD Mongo DB</h1>
+  <h1> 🚀 Labenu System</h1>
 </div>
 
 <h2> 🖊 Sobre</h2>
