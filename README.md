@@ -15,11 +15,22 @@ e ser capaz de aplicá-la ao projeto de maneira que cumprisse com todas as expec
 
 <h2> ⚙ Tecnologias</h2>
 <ul>
-<h5>DotEnv</h5>
-<h5>Express.JS</h5>
-<h5>Mongoose</h5>
-<h5>Nodemon</h5>
+<li>DotEnv</li>
+<li>Express.JS</li>
+<li>Mongoose</li>
+<li>Nodemon</li>
  </ul>
+ 
+ 
+ <h2> 🔧 Como usar</h2> 
+</br>
+<ul>
+  <li>Faça o fork na sua máquina</li>
+  <li>Dê o npm install</li>
+  <li>Crie a pasta .env</li>
+  <li>Coloque as suas credencias MongoDB dentro da pasta .env</li>
+  <li>Dê o npm start / npm run dev</li>
+</ul>
 
 
 
